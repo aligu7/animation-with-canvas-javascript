@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+*::selection {
+  background: none;
+  background-color: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.logo {
+  color: white;
+  font-size: 4rem;
+  cursor: default;
+  transition: all 0.3s ease;
+  border-radius: 80px;
+  padding: 10px 30px;
+  animation: anim 2s linear infinite;
+}
+
+.logo:hover {
+  text-shadow: 0 0 20px white;
+  cursor: pointer;
+  box-shadow: 0 0 10px #3f3, 0 0 10px #3f3, 0 0 10px #3f3, 0 0 10px #3f3;
+}
+
+@keyframes anim {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.logo.active {
+  transform: rotate(360deg);
+  font-size: 2rem;
+}
+
+span {
+  color: blue;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.about {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+.about.active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -99;
+}
